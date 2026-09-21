@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>La Ruta del Inglés | Guía de Inglés Básico I explicada en español</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    box-sizing:border-box;
+    padding-top:env(safe-area-inset-top,0px);
+    padding-bottom:env(safe-area-inset-bottom,0px);
+    --ink:#0f172a; --paper:#f8fafc;
+  }
+  html{scroll-padding-top:env(safe-area-inset-top,0px);}
+  body{font-family:'Inter',system-ui,-apple-system,'Segoe UI',Arial,sans-serif;background:var(--paper);color:var(--ink);}
+  .tab-content{display:none}
+  .tab-content.active{display:block}
+  .scrollx{overflow-x:auto;-webkit-overflow-scrolling:touch}
+  table{max-width:100%}
+  .say{font-style:normal;color:#b45309;font-weight:600}
+  .es{color:#475569}
+  details>summary{cursor:pointer;list-style:none}
+  details>summary::-webkit-details-marker{display:none}
+  @media print{
+    aside,.noprint{display:none!important}
+    .tab-content{display:block!important;page-break-after:always}
+  }
+</style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+<!-- ================= HEADER ================= -->
+<header class="bg-indigo-900 text-white shadow-lg sticky z-50" style="top:env(safe-area-inset-top,0px)">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
+    <div class="flex items-center space-x-3">
+      <div class="bg-amber-400 text-indigo-950 font-black px-2.5 py-1 rounded text-sm tracking-wider leading-tight text-center">LA RUTA<br>DEL INGLÉS</div>
+      <div>
+        <h1 class="font-bold text-base sm:text-lg leading-tight">Guía de Inglés Básico I</h1>
+        <p class="text-[11px] sm:text-xs text-indigo-200">Explicada 100% en español · Preparación de exámenes</p>
+      </div>
+    </div>
+    <button onclick="window.print()" class="noprint bg-indigo-700 hover:bg-indigo-600 text-xs px-3 py-1.5 rounded text-white transition">🖨️ Imprimir / PDF</button>
+  </div>
+</header>
+
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex-1 grid grid-cols-1 lg:grid-cols-4 gap-6 w-full">
+
+  <!-- ================= SIDEBAR ================= -->
+  <aside class="lg:col-span-1 space-y-4 noprint">
+    <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-4">
+      <h2 class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3 px-2">Módulos</h2>
+      <nav class="space-y-1" id="nav"></nav>
+    </div>
+
+    <div class="bg-indigo-900 text-white rounded-xl shadow-sm p-4">
+      <h3 class="font-bold text-sm mb-2">✅ Checklist Midterm</h3>
+      <p class="text-[11px] text-indigo-200 mb-2">Marca cada tema cuando puedas decirlo en voz alta sin mirar.</p>
+      <div class="space-y-2 text-xs" id="checklist"></div>
+      <button onclick="resetCheck()" class="mt-3 text-[11px] underline text-indigo-300">Reiniciar checklist</button>
+    </div>
+
+    <div class="bg-amber-50 border border-amber-200 rounded-xl p-4 text-[11px] text-amber-900 leading-relaxed">
+      <strong>Sobre la pronunciación escrita:</strong> los sonidos entre paréntesis (ej. <span class="say">ai am</span>) son una <em>aproximación</em> escrita en español. No son exactos: sirven para arrancar. El sonido real solo se aprende escuchando los videos.
+    </div>
+  </aside>
+
+  <!-- ================= MAIN ================= -->
+  <main class="lg:col-span-3 space-y-6">
+
+    <!-- ---------- TAB 0: CÓMO USAR / RESUMEN ---------- -->
+    <section id="tab-0" class="tab-content active space-y-6">
+
+      <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
+        <span class="text-xs font-semibold uppercase tracking-wider text-indigo-600 bg-indigo-50 px-2.5 py-1 rounded">Empieza por aquí</span>
+        <h2 class="text-2xl font-bold text-slate-900 mt-2 mb-3">Cómo usar esta guía (léelo 1 vez)</h2>
+        <p class="text-sm text-slate-600 mb-4">Esta guía está escrita pensando en alguien que <strong>no ha estudiado inglés nunca</strong>. Todo está explicado en español. Cada frase en inglés viene con tres cosas:</p>
+
+        <div class="grid sm:grid-cols-3 gap-3 text-xs mb-5">
+          <div class="border border-slate-200 rounded-lg p-3 bg-slate-50">
+            <p class="font-bold text-indigo-900 mb-1">1. La frase en inglés</p>
+            <p class="font-mono text-slate-800">I am a student.</p>
+          </div>
+          <div class="border border-slate-200 rounded-lg p-3 bg-slate-50">
+            <p class="font-bold text-indigo-900 mb-1">2. Cómo suena</p>
+            <p class="say">(ái am a stiúdent)</p>
+          </div>
+          <div class="border border-slate-200 rounded-lg p-3 bg-slate-50">
+            <p class="font-bold text-indigo-900 mb-1">3. Qué significa</p>
+            <p class="es">Soy un estudiante.</p>
+          </div>
+        </div>
+
+        <div class="bg-indigo-50 border border-indigo-200 rounded-lg p-4 text-sm">
+          <p class="font-bold text-indigo-900 mb-2">Método recomendado para cada módulo (25–35 min)</p>
+          <ol class="list-decimal list-inside space-y-1 text-slate-700 text-xs">
+            <li>Leer la explicación y la <strong>fórmula</strong> de la oración.</li>
+            <li>Leer los ejemplos <strong>en voz alta</strong> (obligatorio: la evaluación es también oral).</li>
+            <li>Ver <strong>1 video</strong> de la sección de videos del módulo.</li>
+            <li>Hacer <strong>1 ejercicio online</strong> de los enlaces en español.</li>
+            <li>Resolver el ejercicio interno del módulo y revisar la respuesta.</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
+        <h3 class="font-bold text-slate-900 text-lg mb-3">¿Qué te van a evaluar?</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="border border-blue-200 bg-blue-50/50 rounded-lg p-4">
+            <h4 class="font-bold text-blue-900 text-sm mb-2">✍️ WRITTEN TEST (prueba escrita)</h4>
+            <ul class="text-xs text-slate-700 space-y-1.5 list-disc list-inside">
+              <li>Verbo <strong>BE</strong> — am / is / are</li>
+              <li>Números del <strong>1 al 100</strong> escritos con letras</li>
+              <li><strong>Spelling</strong>: deletrear</li>
+              <li><strong>Países y nacionalidades</strong></li>
+              <li>Preguntas de <strong>información personal</strong></li>
+            </ul>
+          </div>
+          <div class="border border-amber-200 bg-amber-50/50 rounded-lg p-4">
+            <h4 class="font-bold text-amber-900 text-sm mb-2">🎤 ORAL TEST (prueba oral)</h4>
+            <ul class="text-xs text-slate-700 space-y-1.5 list-disc list-inside">
+              <li>Usar el verbo BE al hablar</li>
+              <li>Deletrear tu nombre y palabras en voz alta</li>
+              <li>Decir objetos en singular y plural</li>
+              <li>Usar <em>this / that / these / those</em></li>
+              <li>Preguntar y responder de dónde eres</li>
+              <li>Preguntar y responder datos personales</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
+        <h3 class="font-bold text-slate-900 text-lg mb-3">Cronograma (5 clases)</h3>
+        <div class="space-y-2" id="cronograma"></div>
+      </div>
+
+      <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-5">
+        <h3 class="font-bold text-emerald-900 text-sm mb-2">🌐 Sitios en español para practicar (sirven para todos los módulos)</h3>
+        <div class="flex flex-wrap gap-2 text-xs">
+          <a target="_blank" rel="noopener" href="https://www.curso-ingles.com/practicar/ejercicios" class="bg-white hover:bg-emerald-100 text-emerald-800 px-3 py-1.5 rounded border border-emerald-300 font-medium">curso-ingles.com · +300 ejercicios con corrección ↗</a>
+          <a target="_blank" rel="noopener" href="https://www.ejerciciosinglesonline.com/beginners/" class="bg-white hover:bg-emerald-100 text-emerald-800 px-3 py-1.5 rounded border border-emerald-300 font-medium">ejerciciosinglesonline.com · Sección principiantes ↗</a>
+          <a target="_blank" rel="noopener" href="https://www.saberingles.com.ar/exercises/index1.html" class="bg-white hover:bg-emerald-100 text-emerald-800 px-3 py-1.5 rounded border border-emerald-300 font-medium">saberingles.com.ar · Nivel básico ↗</a>
+        </div>
+        <p class="text-[11px] text-emerald-800 mt-3">Los tres tienen las instrucciones en español y corrigen automáticamente. Si algún enlace cambia con el tiempo, busca en Google el nombre del sitio + el tema.</p>
+      </div>
+    </section>
+
+    <!-- ---------- TAB 1: VERBO BE + NÚMEROS ---------- -->
+    <section id="tab-1" class="tab-content space-y-6">
+
+      <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
+        <span class="text-xs font-bold text-indigo-600 uppercase">Módulo 1</span>
+        <h2 class="text-xl font-bold text-slate-900 mb-1">El verbo BE (ser / estar)</h2>
+        <p class="text-sm text-slate-600 mb-5">Es el verbo más importante del curso. En español tenemos dos verbos: <strong>ser</strong> y <strong>estar</strong>. En inglés los dos se dicen con <strong>una sola palabra</strong>, que cambia de forma según quién habla: <strong>am, is, are</strong>.</p>
+
+        <h3 class="font-bold text-slate-800 border-l-4 border-indigo-600 pl-2 mb-3">1. Los pronombres (quién habla)</h3>
+        <div class="scrollx">
+          <table class="w-full text-xs border border-slate-200 rounded-lg">
+            <thead class="bg-slate-100 text-slate-700 uppercase"><tr>
+              <th class="p-2 text-left border-b">Inglés</th><th class="p-2 text-left border-b">Suena</th><th class="p-2 text-left border-b">Español</th><th class="p-2 text-left border-b">Forma de BE</th></tr></thead>
+            <tbody class="divide-y divide-slate-100">
+              <tr><td class="p-2 font-bold">I</td><td class="p-2 say">ái</td><td class="p-2 es">yo</td><td class="p-2 font-bold text-indigo-700">am</td></tr>
+              <tr><td class="p-2 font-bold">You</td><td class="p-2 say">iú</td><td class="p-2 es">tú / usted / ustedes</td><td class="p-2 font-bold text-indigo-700">are</td></tr>
+              <tr><td class="p-2 font-bold">He</td><td class="p-2 say">jí</td><td class="p-2 es">él</td><td class="p-2 font-bold text-indigo-700">is</td></tr>
+              <tr><td class="p-2 font-bold">She</td><td class="p-2 say">shí</td><td class="p-2 es">ella</td><td class="p-2 font-bold text-indigo-700">is</td></tr>
+              <tr><td class="p-2 font-bold">It</td><td class="p-2 say">it</td><td class="p-2 es">eso (una cosa o animal)</td><td class="p-2 font-bold text-indigo-700">is</td></tr>
+              <tr><td class="p-2 font-bold">We</td><td class="p-2 say">uí</td><td class="p-2 es">nosotros</td><td class="p-2 font-bold text-indigo-700">are</td></tr>
+              <tr><td class="p-2 font-bold">They</td><td class="p-2 say">déi</td><td class="p-2 es">ellos / ellas</td><td class="p-2 font-bold text-indigo-700">are</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="text-xs text-slate-500 mt-2">Truco de memoria: <strong>I → am</strong>. <strong>He, She, It → is</strong> (una sola persona/cosa). <strong>You, We, They → are</strong> (el resto).</p>
+
+        <h3 class="font-bold text-slate-800 border-l-4 border-indigo-600 pl-2 mt-7 mb-3">2. Las tres fórmulas que debes memorizar</h3>
+
+        <div class="space-y-3">
+          <div class="border-2 border-emerald-300 bg-emerald-50 rounded-lg p-4">
+            <p class="text-xs font-bold text-emerald-800 uppercase mb-1">Afirmación (+) · decir que algo es así</p>
+            <p class="font-mono text-sm font-bold text-emerald-900 mb-2">PRONOMBRE + am/is/are + resto</p>
+            <div class="bg-white rounded border border-emerald-200 p-3 text-xs space-y-1.5">
+              <p><strong>I am Chilean.</strong> <span class="say">(ái am chílian)</span> — <span class="es">Soy chileno/a.</span></p>
+              <p><strong>She is a student.</strong> <span class="say">(shí is a stiúdent)</span> — <span class="es">Ella es estudiante.</span></p>
+              <p><strong>They are in the classroom.</strong> <span class="say">(déi ar in de clásrum)</span> — <span class="es">Ellos están en la sala.</span></p>
+            </div>
+          </div>
+
+          <div class="border-2 border-rose-300 bg-rose-50 rounded-lg p-4">
+            <p class="text-xs font-bold text-rose-800 uppercase mb-1">Negación (−) · decir que algo NO es así</p>
+            <p class="font-mono text-sm font-bold text-rose-900 mb-2">PRONOMBRE + am/is/are + <u>not</u> + resto</p>
+            <div class="bg-white rounded border border-rose-200 p-3 text-xs space-y-1.5">
+              <p><strong>I am not a teacher.</strong> <span class="say">(ái am not a tícher)</span> — <span class="es">No soy profesor.</span></p>
+              <p><strong>He is not from Peru.</strong> <span class="say">(jí is not from perú)</span> — <span class="es">Él no es de Perú.</span></p>
+              <p><strong>We are not ready.</strong> <span class="say">(uí ar not rédi)</span> — <span class="es">No estamos listos.</span></p>
+            </div>
+            <p class="text-[11px] text-rose-800 mt-2"><strong>El "not" va SIEMPRE después de am/is/are</strong>, nunca antes.</p>
+          </div>
+
+          <div class="border-2 border-indigo-300 bg-indigo-50 rounded-lg p-4">
+            <p class="text-xs font-bold text-indigo-800 uppercase mb-1">Pregunta (?) · se da vuelta el orden</p>
+            <p class="font-mono text-sm font-bold text-indigo-900 mb-2">am/is/are + PRONOMBRE + resto + ?</p>
+            <div class="bg-white rounded border border-indigo-200 p-3 text-xs space-y-1.5">
+              <p><strong>Are you a student?</strong> <span class="say">(ar iú a stiúdent)</span> — <span class="es">¿Eres estudiante?</span></p>
+              <p><strong>Is she Chilean?</strong> <span class="say">(is shí chílian)</span> — <span class="es">¿Ella es chilena?</span></p>
+              <p><strong>Am I late?</strong> <span class="say">(am ái léit)</span> — <span class="es">¿Llego tarde?</span></p>
+            </div>
+            <p class="text-[11px] text-indigo-800 mt-2">Para responder: <strong>Yes, I am.</strong> / <strong>No, I'm not.</strong> · <strong>Yes, she is.</strong> / <strong>No, she isn't.</strong></p>
+          </div>
+        </div>
+
+        <h3 class="font-bold text-slate-800 border-l-4 border-indigo-600 pl-2 mt-7 mb-3">3. Contracciones (la forma corta)</h3>
+        <p class="text-xs text-slate-600 mb-2">Al hablar casi siempre se usa la forma corta. Significan exactamente lo mismo.</p>
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs text-center">
+          <div class="bg-slate-50 border rounded p-2">I am = <strong>I'm</strong></div>
+          <div class="bg-slate-50 border rounded p-2">You are = <strong>You're</strong></div>
+          <div class="bg-slate-50 border rounded p-2">He is = <strong>He's</strong></div>
+          <div class="bg-slate-50 border rounded p-2">She is = <strong>She's</strong></div>
+          <div class="bg-slate-50 border rounded p-2">It is = <strong>It's</strong></div>
+          <div class="bg-slate-50 border rounded p-2">We are = <strong>We're</strong></div>
+          <div class="bg-slate-50 border rounded p-2">They are = <strong>They're</strong></div>
+          <div class="bg-slate-50 border rounded p-2">is not = <strong>isn't</strong> · are not = <strong>aren't</strong></div>
+        </div>
+
+        <div class="bg-red-50 border-l-4 border-red-500 p-4 mt-6 text-xs">
+          <p class="font-bold text-red-800 mb-1">🚨 El error #1 de los hispanohablantes</p>
+          <p class="text-slate-700">En español decimos "<em>tengo</em> 20 años". En inglés <strong>NO se usa tener</strong>: se usa el verbo BE.</p>
+          <p class="mt-2">❌ <span class="line-through">I have 20 years old.</span><br>✅ <strong>I am 20 years old.</strong> <span class="say">(ái am tuénti íers óuld)</span></p>
+        </div>
+      </div>
+
+      <!-- Números -->
+      <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
+        <h2 class="text-xl font-bold text-slate-900 mb-1">Los números del 1 al 100</h2>
+        <p class="text-sm text-slate-600 mb-4">En la prueba escrita te pueden pedir <strong>escribir el número con letras</strong>. En la oral, <strong>decirlo</strong>.</p>
+
+        <div class="scrollx mb-4">
+          <table class="w-full text-xs border border-slate-200">
+            <thead class="bg-slate-100 uppercase"><tr><th class="p-2 text-left border-b">Nº</th><th class="p-2 text-left border-b">Inglés</th><th class="p-2 text-left border-b">Suena</th><th class="p-2 text-left border-b">Nº</th><th class="p-2 text-left border-b">Inglés</th><th class="p-2 text-left border-b">Suena</th></tr></thead>
+            <tbody class="divide-y divide-slate-100" id="numtable"></tbody>
+          </table>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-4 text-xs">
+          <div class="bg-amber-50 border border-amber-300 rounded-lg p-4">
+            <p class="font-bold text-amber-900 mb-2">⚠️ -TEEN vs -TY (el error más caro)</p>
+            <p class="text-slate-700 mb-2">Se parecen mucho. La diferencia está en <strong>dónde pones la fuerza de la voz</strong>:</p>
+            <ul class="space-y-1">
+              <li>13 = <strong>thir<u>TEEN</u></strong> <span class="say">(zer-TÍIN)</span> → fuerza al final, "i" larga</li>
+              <li>30 = <strong><u>THIR</u>ty</strong> <span class="say">(ZÉR-ti)</span> → fuerza al principio, corto</li>
+              <li>15 = fif<u>TEEN</u> / 50 = <u>FIF</u>ty</li>
+              <li>19 = nine<u>TEEN</u> / 90 = <u>NINE</u>ty</li>
+            </ul>
+          </div>
+          <div class="bg-slate-50 border border-slate-300 rounded-lg p-4">
+            <p class="font-bold text-indigo-900 mb-2">✍️ Cómo se escriben del 21 al 99</p>
+            <p class="text-slate-700 mb-2">Decena + <strong>guion</strong> + unidad. El guion es obligatorio.</p>
+            <p class="font-mono bg-white border rounded p-2">21 = twenty-one<br>45 = forty-five<br>88 = eighty-eight</p>
+            <p class="mt-2 text-rose-700">Ojo con la ortografía: <strong>forty</strong> (40) NO lleva "u" — ❌ fourty.</p>
+            <p class="text-slate-700 mt-1">100 = <strong>one hundred</strong>.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ejercicio interno -->
+      <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
+        <h3 class="font-bold text-slate-900 mb-3">🖊️ Ejercicio del módulo</h3>
+        <p class="text-xs text-slate-600 mb-3">Completa mentalmente o en tu cuaderno y luego abre la respuesta.</p>
+        <div class="space-y-2 text-xs" id="ex1"></div>
+      </div>
+
+      <div id="links-1"></div>
+    </section>
+
+    <!-- ---------- TAB 2: PAÍSES + SPELLING ---------- -->
+    <section id="tab-2" class="tab-content space-y-6">
+
+      <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
+        <span class="text-xs font-bold text-indigo-600 uppercase">Módulo 2</span>
+        <h2 class="text-xl font-bold text-slate-900 mb-1">Países, nacionalidades y deletreo</h2>
+
+        <h3 class="font-bold text-slate-800 border-l-4 border-indigo-600 pl-2 mt-4 mb-3">1. País ≠ Nacionalidad</h3>
+        <div class="bg-red-50 border-l-4 border-red-500 p-4 text-xs mb-4">
+          <p class="font-bold text-red-800 mb-1">🚨 Error típico</p>
+          <p>❌ <span class="line-through">I am Chile.</span> (esto significa "yo soy el país Chile")<br>
+          ✅ <strong>I am from Chile.</strong> = Soy de Chile. (país)<br>
+          ✅ <strong>I am Chilean.</strong> = Soy chileno/a. (nacionalidad)</p>
+        </div>
+
+        <div class="border-2 border-indigo-300 bg-indigo-50 rounded-lg p-4 mb-4">
+          <p class="text-xs font-bold text-indigo-800 uppercase mb-2">Fórmulas de origen</p>
+          <p class="font-mono text-sm text-indigo-900">Pregunta: Where + am/is/are + pronombre + from?</p>
+          <p class="font-mono text-sm text-indigo-900">Respuesta: Pronombre + am/is/are + from + PAÍS.</p>
+          <div class="bg-white rounded border border-indigo-200 p-3 text-xs mt-3 space-y-1">
+            <p><strong>Where are you from?</strong> <span class="say">(uér ar iú from)</span> — <span class="es">¿De dónde eres?</span></p>
+            <p><strong>I am from Chile. I am Chilean.</strong> — <span class="es">Soy de Chile. Soy chileno.</span></p>
+            <p><strong>Where is he from?</strong> — <strong>He is from Brazil. He is Brazilian.</strong></p>
+          </div>
+        </div>
+
+        <div class="scrollx">
+          <table class="w-full text-xs border border-slate-200">
+            <thead class="bg-slate-100 uppercase"><tr><th class="p-2 text-left border-b">País</th><th class="p-2 text-left border-b">Nacionalidad</th><th class="p-2 text-left border-b">Suena</th><th class="p-2 text-left border-b">Oración modelo</th></tr></thead>
+            <tbody class="divide-y divide-slate-100" id="natable"></tbody>
+          </table>
+        </div>
+        <p class="text-[11px] text-slate-500 mt-2">Los países y las nacionalidades se escriben <strong>siempre con mayúscula inicial</strong> en inglés, aunque estén en medio de la oración.</p>
+
+        <h3 class="font-bold text-slate-800 border-l-4 border-indigo-600 pl-2 mt-7 mb-3">2. El alfabeto y el spelling (deletrear)</h3>
+        <p class="text-xs text-slate-600 mb-3">En el examen oral te van a pedir <strong>"How do you spell your name?"</strong> <span class="say">(jáu du iú spel iór néim)</span> = ¿Cómo se deletrea tu nombre? Debes decir <strong>letra por letra en inglés</strong>.</p>
+
+        <div class="grid grid-cols-3 sm:grid-cols-6 gap-1.5 text-[11px] text-center mb-4" id="alphabet"></div>
+
+        <div class="bg-amber-50 border border-amber-300 rounded-lg p-4 text-xs mb-4">
+          <p class="font-bold text-amber-900 mb-2">⚠️ Las letras que más confunden a los hispanohablantes</p>
+          <ul class="space-y-1 text-slate-700">
+            <li><strong>E</strong> suena <span class="say">"i"</span> — pero <strong>I</strong> suena <span class="say">"ái"</span>. (Al revés de lo que crees.)</li>
+            <li><strong>A</strong> suena <span class="say">"éi"</span>, no "a".</li>
+            <li><strong>G</strong> <span class="say">"yí"</span> vs <strong>J</strong> <span class="say">"yéi"</span>.</li>
+            <li><strong>Y</strong> <span class="say">"uái"</span> vs <strong>W</strong> <span class="say">"dábol-iu"</span>.</li>
+            <li>Doble letra: "LL" se dice <strong>double L</strong> <span class="say">(dábol el)</span>.</li>
+          </ul>
+        </div>
+
+        <div class="border-2 border-indigo-300 bg-indigo-50 rounded-lg p-4">
+          <p class="text-xs font-bold text-indigo-800 uppercase mb-2">Guion de deletreo (memorízalo así)</p>
+          <div class="bg-white rounded border border-indigo-200 p-3 text-xs font-mono space-y-1">
+            <p><span class="text-indigo-600">Profesor:</span> How do you spell your last name?</p>
+            <p><span class="text-amber-600">Tú:</span> It's S – I – L – V – A. <span class="es">(di cada letra, pausado)</span></p>
+            <p><span class="text-indigo-600">Profesor:</span> What's your email address?</p>
+            <p><span class="text-amber-600">Tú:</span> It's j – dot – silva – at – gmail – dot – com.</p>
+          </div>
+          <p class="text-[11px] text-indigo-900 mt-2"><strong>@ = "at"</strong> <span class="say">(at)</span> · <strong>. = "dot"</strong> <span class="say">(dot)</span> · <strong>- = "dash"</strong> · <strong>_ = "underscore"</strong></p>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
+        <h3 class="font-bold text-slate-900 mb-3">🖊️ Ejercicio del módulo</h3>
+        <div class="space-y-2 text-xs" id="ex2"></div>
+      </div>
+
+      <div id="links-2"></div>
+    </section>
+
+    <!-- ---------- TAB 3: PLURALES + DEMOSTRATIVOS ---------- -->
+    <section id="tab-3" class="tab-content space-y-6">
+      <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
+        <span class="text-xs font-bold text-indigo-600 uppercase">Módulo 3</span>
+        <h2 class="text-xl font-bold text-slate-900 mb-1">Singular / plural y this – that – these – those</h2>
+
+        <h3 class="font-bold text-slate-800 border-l-4 border-indigo-600 pl-2 mt-4 mb-3">1. Cómo formar el plural</h3>
+        <div class="scrollx">
+          <table class="w-full text-xs border border-slate-200">
+            <thead class="bg-slate-100 uppercase"><tr><th class="p-2 text-left border-b">Regla</th><th class="p-2 text-left border-b">Qué hacer</th><th class="p-2 text-left border-b">Ejemplos</th></tr></thead>
+            <tbody class="divide-y divide-slate-100 text-slate-700">
+              <tr><td class="p-2 font-semibold">Regla general</td><td class="p-2">agregar <strong>-s</strong></td><td class="p-2 font-mono">book → books · pen → pens</td></tr>
+              <tr><td class="p-2 font-semibold">Termina en -ch, -sh, -s, -x, -z</td><td class="p-2">agregar <strong>-es</strong></td><td class="p-2 font-mono">watch → watches · bus → buses · box → boxes</td></tr>
+              <tr><td class="p-2 font-semibold">Consonante + y</td><td class="p-2">cambiar y por <strong>-ies</strong></td><td class="p-2 font-mono">city → cities · country → countries</td></tr>
+              <tr><td class="p-2 font-semibold">Vocal + y</td><td class="p-2">solo <strong>-s</strong></td><td class="p-2 font-mono">key → keys · day → days</td></tr>
+              <tr class="bg-amber-50"><td class="p-2 font-semibold">Irregulares (memorizar)</td><td class="p-2">cambian solos</td><td class="p-2 font-mono">man → <strong>men</strong> · woman → <strong>women</strong> · child → <strong>children</strong> · person → <strong>people</strong></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 class="font-bold text-slate-800 border-l-4 border-indigo-600 pl-2 mt-7 mb-3">2. Los demostrativos: solo 4 palabras</h3>
+        <p class="text-xs text-slate-600 mb-3">En español tenemos este/ese/aquel. En inglés solo importan dos cosas: <strong>¿está cerca o lejos?</strong> y <strong>¿es uno o varios?</strong></p>
+        <div class="grid grid-cols-2 gap-3 text-xs">
+          <div class="bg-emerald-50 border-2 border-emerald-300 rounded-lg p-4">
+            <p class="font-bold text-emerald-900 mb-2">CERCA (lo puedo tocar)</p>
+            <p class="mb-1"><strong class="text-base">THIS</strong> <span class="say">(dis)</span> = este/esta — <em>1 cosa</em></p>
+            <p class="font-mono bg-white p-1.5 rounded border mb-2">This is a book.</p>
+            <p class="mb-1"><strong class="text-base">THESE</strong> <span class="say">(dís)</span> = estos/estas — <em>varias</em></p>
+            <p class="font-mono bg-white p-1.5 rounded border">These are books.</p>
+          </div>
+          <div class="bg-sky-50 border-2 border-sky-300 rounded-lg p-4">
+            <p class="font-bold text-sky-900 mb-2">LEJOS (está allá)</p>
+            <p class="mb-1"><strong class="text-base">THAT</strong> <span class="say">(dat)</span> = ese/aquel — <em>1 cosa</em></p>
+            <p class="font-mono bg-white p-1.5 rounded border mb-2">That is a pen.</p>
+            <p class="mb-1"><strong class="text-base">THOSE</strong> <span class="say">(dóus)</span> = esos/aquellos — <em>varias</em></p>
+            <p class="font-mono bg-white p-1.5 rounded border">Those are pens.</p>
+          </div>
+        </div>
+
+        <div class="border-2 border-indigo-300 bg-indigo-50 rounded-lg p-4 mt-4">
+          <p class="text-xs font-bold text-indigo-800 uppercase mb-2">Fórmula completa</p>
+          <p class="font-mono text-sm text-indigo-900">This / That + <strong>is</strong> + a + objeto singular.</p>
+          <p class="font-mono text-sm text-indigo-900">These / Those + <strong>are</strong> + objetos en plural.</p>
+          <p class="text-[11px] text-indigo-900 mt-2">Nota: <strong>a</strong> solo se usa en singular. En plural desaparece: ❌ <span class="line-through">These are a books.</span></p>
+        </div>
+
+        <div class="bg-red-50 border-l-4 border-red-500 p-4 mt-4 text-xs">
+          <p class="font-bold text-red-800 mb-1">🚨 Errores frecuentes</p>
+          <p>❌ <span class="line-through">This are my keys.</span> → ✅ <strong>These are my keys.</strong><br>
+          ❌ <span class="line-through">Those is a laptop.</span> → ✅ <strong>That is a laptop.</strong></p>
+        </div>
+
+        <h3 class="font-bold text-slate-800 border-l-4 border-indigo-600 pl-2 mt-7 mb-3">3. Preguntar por objetos (va en el oral)</h3>
+        <div class="bg-slate-50 border rounded-lg p-4 text-xs font-mono space-y-1.5">
+          <p><span class="text-indigo-600">P:</span> What is this? <span class="es not-italic">(cerca, 1)</span> → <span class="text-amber-700">R:</span> It is a pencil.</p>
+          <p><span class="text-indigo-600">P:</span> What is that? <span class="es not-italic">(lejos, 1)</span> → <span class="text-amber-700">R:</span> It is a window.</p>
+          <p><span class="text-indigo-600">P:</span> What are these? <span class="es not-italic">(cerca, varios)</span> → <span class="text-amber-700">R:</span> They are keys.</p>
+          <p><span class="text-indigo-600">P:</span> What are those? <span class="es not-italic">(lejos, varios)</span> → <span class="text-amber-700">R:</span> They are chairs.</p>
+        </div>
+        <p class="text-[11px] text-slate-600 mt-2">Fíjate: la respuesta usa <strong>It is</strong> para uno y <strong>They are</strong> para varios.</p>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
+        <h3 class="font-bold text-slate-900 mb-3">🖊️ Ejercicio del módulo</h3>
+        <div class="space-y-2 text-xs" id="ex3"></div>
+      </div>
+
+      <div id="links-3"></div>
+    </section>
+
+    <!-- ---------- TAB 4: INFO PERSONAL ---------- -->
+    <section id="tab-4" class="tab-content space-y-6">
+      <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
+        <span class="text-xs font-bold text-indigo-600 uppercase">Módulo 4</span>
+        <h2 class="text-xl font-bold text-slate-900 mb-1">Preguntas de información personal</h2>
+        <p class="text-sm text-slate-600 mb-4">Estas son las preguntas exactas que te harán en el examen oral. Apréndelas <strong>de memoria</strong>, con la respuesta ya preparada con tus datos.</p>
+
+        <div class="scrollx">
+          <table class="w-full text-xs border border-slate-200">
+            <thead class="bg-slate-100 uppercase"><tr>
+              <th class="p-2 text-left border-b">Pregunta</th><th class="p-2 text-left border-b">Qué significa</th><th class="p-2 text-left border-b">Respuesta modelo</th><th class="p-2 text-left border-b">Cuidado</th></tr></thead>
+            <tbody class="divide-y divide-slate-100 text-slate-700" id="qatable"></tbody>
+          </table>
+        </div>
+
+        <h3 class="font-bold text-slate-800 border-l-4 border-indigo-600 pl-2 mt-7 mb-3">Las palabras de pregunta (question words)</h3>
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs text-center">
+          <div class="bg-slate-50 border rounded p-2"><strong>What</strong> <span class="say">(uát)</span><br><span class="es">Qué / Cuál</span></div>
+          <div class="bg-slate-50 border rounded p-2"><strong>Where</strong> <span class="say">(uér)</span><br><span class="es">Dónde</span></div>
+          <div class="bg-slate-50 border rounded p-2"><strong>How old</strong> <span class="say">(jáu óuld)</span><br><span class="es">Qué edad</span></div>
+          <div class="bg-slate-50 border rounded p-2"><strong>How</strong> <span class="say">(jáu)</span><br><span class="es">Cómo</span></div>
+        </div>
+
+        <div class="border-2 border-indigo-300 bg-indigo-50 rounded-lg p-4 mt-4">
+          <p class="text-xs font-bold text-indigo-800 uppercase mb-2">Fórmula de toda pregunta con BE</p>
+          <p class="font-mono text-sm text-indigo-900">PALABRA DE PREGUNTA + am/is/are + persona + ... ?</p>
+          <p class="text-xs text-slate-700 mt-2 font-mono">What &nbsp;+&nbsp; is &nbsp;+&nbsp; your name? &nbsp;|&nbsp; Where &nbsp;+&nbsp; are &nbsp;+&nbsp; you &nbsp;+&nbsp; from? &nbsp;|&nbsp; How old &nbsp;+&nbsp; are &nbsp;+&nbsp; you?</p>
+        </div>
+
+        <h3 class="font-bold text-slate-800 border-l-4 border-indigo-600 pl-2 mt-7 mb-3">Diálogo completo para practicar en voz alta</h3>
+        <div class="bg-indigo-950 text-white p-4 rounded-lg text-xs font-mono space-y-2">
+          <p><span class="text-amber-400">A:</span> Hello! What's your full name?</p>
+          <p class="pl-4 text-indigo-300 italic">Hola, ¿cuál es tu nombre completo?</p>
+          <p><span class="text-emerald-400">B:</span> Hi, my full name is Camila Torres.</p>
+          <p><span class="text-amber-400">A:</span> How do you spell your last name?</p>
+          <p class="pl-4 text-indigo-300 italic">¿Cómo deletreas tu apellido?</p>
+          <p><span class="text-emerald-400">B:</span> It's T – O – R – R – E – S.</p>
+          <p><span class="text-amber-400">A:</span> Where are you from?</p>
+          <p><span class="text-emerald-400">B:</span> I'm from Chile. I'm Chilean.</p>
+          <p><span class="text-amber-400">A:</span> How old are you?</p>
+          <p><span class="text-emerald-400">B:</span> I'm twenty-one years old.</p>
+          <p><span class="text-amber-400">A:</span> What's your phone number?</p>
+          <p><span class="text-emerald-400">B:</span> It's nine – eight – seven – six – five – four – three – two.</p>
+          <p><span class="text-amber-400">A:</span> And what's your email address?</p>
+          <p><span class="text-emerald-400">B:</span> It's c dot torres at gmail dot com.</p>
+        </div>
+
+        <div class="bg-emerald-50 border border-emerald-300 rounded-lg p-4 mt-4 text-xs">
+          <p class="font-bold text-emerald-900 mb-2">🗣️ Frases de emergencia (si no entiendes al profesor)</p>
+          <ul class="space-y-1 text-slate-700">
+            <li><strong>Can you repeat, please?</strong> <span class="say">(can iú ripít plís)</span> — <span class="es">¿Puede repetir, por favor?</span></li>
+            <li><strong>Sorry, I don't understand.</strong> <span class="say">(sóri, ái dont anderstánd)</span> — <span class="es">Perdón, no entiendo.</span></li>
+            <li><strong>More slowly, please.</strong> <span class="say">(mor slóuli plís)</span> — <span class="es">Más lento, por favor.</span></li>
+            <li><strong>How do you say ___ in English?</strong> — <span class="es">¿Cómo se dice ___ en inglés?</span></li>
+          </ul>
+          <p class="text-[11px] text-emerald-800 mt-2">Usar estas frases <strong>en inglés</strong> suma puntos; quedarse en silencio, no.</p>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
+        <h3 class="font-bold text-slate-900 mb-3">🖊️ Tu ficha personal (complétala y apréndela)</h3>
+        <p class="text-xs text-slate-600 mb-3">Escribe aquí tus respuestas reales. Se guardan en este dispositivo.</p>
+        <div class="space-y-2 text-xs" id="ficha"></div>
+      </div>
+
+      <div id="links-4"></div>
+    </section>
+
+    <!-- ---------- TAB 5: SIMULACRO ---------- -->
+    <section id="tab-5" class="tab-content space-y-6">
+      <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
+        <span class="text-xs font-bold text-emerald-700 uppercase">Módulo 5</span>
+        <h2 class="text-xl font-bold text-slate-900 mb-1">Ensayo general: Written + Oral</h2>
+        <p class="text-sm text-slate-600 mb-4">12 preguntas tipo examen. Al corregir, cada pregunta te explica <strong>por qué</strong> la respuesta es esa.</p>
+        <div id="quiz" class="space-y-3 text-xs"></div>
+        <div class="flex gap-2 mt-4">
+          <button onclick="checkQuiz()" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2 px-4 rounded text-xs">Corregir</button>
+          <button onclick="resetQuiz()" class="bg-slate-200 hover:bg-slate-300 text-slate-700 font-bold py-2 px-4 rounded text-xs">Borrar respuestas</button>
+        </div>
+        <div id="quiz-result" class="mt-3 font-bold text-sm hidden"></div>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-sm border border-amber-200 p-6">
+        <h3 class="font-bold text-amber-900 text-base mb-3">🎤 Protocolo del examen oral (practícalo 3 veces)</h3>
+        <div class="space-y-3 text-xs" id="oralsteps"></div>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
+        <h3 class="font-bold text-slate-900 mb-3">📋 Tarjeta de repaso final (día del examen)</h3>
+        <div class="grid sm:grid-cols-2 gap-3 text-xs">
+          <div class="bg-slate-50 border rounded-lg p-3">
+            <p class="font-bold text-indigo-900 mb-1">BE</p>
+            <p class="font-mono">I <strong>am</strong> · He/She/It <strong>is</strong> · You/We/They <strong>are</strong></p>
+          </div>
+          <div class="bg-slate-50 border rounded-lg p-3">
+            <p class="font-bold text-indigo-900 mb-1">Pregunta</p>
+            <p class="font-mono">Se da vuelta: <strong>Are you...?</strong> / <strong>Is she...?</strong></p>
+          </div>
+          <div class="bg-slate-50 border rounded-lg p-3">
+            <p class="font-bold text-indigo-900 mb-1">Edad</p>
+            <p class="font-mono">I <strong>am</strong> 20 years old. (nunca "have")</p>
+          </div>
+          <div class="bg-slate-50 border rounded-lg p-3">
+            <p class="font-bold text-indigo-900 mb-1">Origen</p>
+            <p class="font-mono">I am <strong>from</strong> Chile. I am <strong>Chilean</strong>.</p>
+          </div>
+          <div class="bg-slate-50 border rounded-lg p-3">
+            <p class="font-bold text-indigo-900 mb-1">Demostrativos</p>
+            <p class="font-mono">this/that + <strong>is</strong> · these/those + <strong>are</strong></p>
+          </div>
+          <div class="bg-slate-50 border rounded-lg p-3">
+            <p class="font-bold text-indigo-900 mb-1">Email</p>
+            <p class="font-mono">@ = <strong>at</strong> · . = <strong>dot</strong></p>
+          </div>
+        </div>
+      </div>
+
+      <div id="links-5"></div>
+    </section>
+
+    <!-- ---------- TAB 6: PRONUNCIACIÓN ---------- -->
+    <section id="tab-6" class="tab-content space-y-6">
+      <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
+        <span class="text-xs font-bold text-indigo-600 uppercase">Extra</span>
+        <h2 class="text-xl font-bold text-slate-900 mb-1">Pronunciación: los 5 sonidos que te delatan</h2>
+        <p class="text-sm text-slate-600 mb-4">No necesitas acento perfecto. Necesitas que se te <strong>entienda</strong>. Estos cinco puntos resuelven la mayoría de los problemas de un hispanohablante.</p>
+
+        <div class="space-y-3 text-xs">
+          <div class="border border-slate-200 rounded-lg p-4 bg-slate-50">
+            <p class="font-bold text-indigo-900">1. El sonido TH (this, that, these, those, thirteen, thirty)</p>
+            <p class="text-slate-700 mt-1">Saca la punta de la lengua entre los dientes y sopla. No es "d" ni "s" ni "z" española. En <em>this/that</em> vibra (como la "d" suave de "nada"); en <em>thirteen/thirty</em> no vibra.</p>
+          </div>
+          <div class="border border-slate-200 rounded-lg p-4 bg-slate-50">
+            <p class="font-bold text-indigo-900">2. La H sí se pronuncia (he, how, hello)</p>
+            <p class="text-slate-700 mt-1">En español la h es muda. En inglés es un soplido suave, como la "j" de Chile pero mucho más suave: <em>he</em> = <span class="say">"jí"</span>.</p>
+          </div>
+          <div class="border border-slate-200 rounded-lg p-4 bg-slate-50">
+            <p class="font-bold text-indigo-900">3. Nunca pongas una "e" al inicio (student, Spain, spell)</p>
+            <p class="text-slate-700 mt-1">❌ "estudent", "espain" → ✅ <em>student</em>, <em>Spain</em>, <em>spell</em>. Empieza directo con la "s".</p>
+          </div>
+          <div class="border border-slate-200 rounded-lg p-4 bg-slate-50">
+            <p class="font-bold text-indigo-900">4. Vocal larga vs corta (thirteen vs thirty)</p>
+            <p class="text-slate-700 mt-1">Alargar o acortar una vocal cambia el número, la palabra y la nota. Es el punto clave de los números.</p>
+          </div>
+          <div class="border border-slate-200 rounded-lg p-4 bg-slate-50">
+            <p class="font-bold text-indigo-900">5. La V no es B (very, five, Silva)</p>
+            <p class="text-slate-700 mt-1">Dientes de arriba tocando el labio de abajo. En español b y v suenan igual; en inglés no.</p>
+          </div>
+        </div>
+
+        <div class="bg-indigo-50 border border-indigo-200 rounded-lg p-4 mt-5 text-xs">
+          <p class="font-bold text-indigo-900 mb-2">🔁 Rutina de 10 minutos diarios</p>
+          <ol class="list-decimal list-inside space-y-1 text-slate-700">
+            <li>Escucha una frase del video (30 seg).</li>
+            <li>Repítela en voz alta 3 veces, imitando el ritmo.</li>
+            <li>Grábate con el celular y escúchate.</li>
+            <li>Compara y repite. Solo eso, todos los días.</li>
+          </ol>
+        </div>
+      </div>
+
+      <div id="links-6"></div>
+    </section>
+
+  </main>
+</div>
+
+<footer class="noprint text-center text-[11px] text-slate-400 py-6 px-4">
+  Material preparado por <strong class="text-slate-500">La Ruta del Inglés</strong> · Los enlaces externos pertenecen a sus respectivos sitios y pueden cambiar con el tiempo. Si un enlace no abre, usa el botón de búsqueda de respaldo de esa sección.
+</footer>
+
+<script>
+/* ============ NAV ============ */
+const TABS=[
+ {id:0,label:"Cómo usar esta guía",icon:"🧭"},
+ {id:1,label:"1. Verbo BE y números",icon:"1️⃣"},
+ {id:2,label:"2. Países y deletreo",icon:"2️⃣"},
+ {id:3,label:"3. Plurales y this/that",icon:"3️⃣"},
+ {id:4,label:"4. Información personal",icon:"4️⃣"},
+ {id:5,label:"5. Simulacro de examen",icon:"🏁"},
+ {id:6,label:"Pronunciación (extra)",icon:"🔊"}
+];
+const nav=document.getElementById('nav');
+TABS.forEach(t=>{
+  const b=document.createElement('button');
+  b.id='btn-'+t.id;
+  b.className='tab-btn w-full text-left px-3 py-2.5 rounded-lg text-sm font-medium flex items-center gap-2 text-slate-600 hover:bg-slate-50 transition';
+  b.innerHTML='<span>'+t.icon+'</span><span>'+t.label+'</span>';
+  b.onclick=()=>openTab(t.id);
+  nav.appendChild(b);
+});
+function openTab(id){
+  document.querySelectorAll('.tab-content').forEach(c=>c.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b=>{b.classList.remove('bg-indigo-50','text-indigo-700');b.classList.add('text-slate-600');});
+  document.getElementById('tab-'+id).classList.add('active');
+  const ab=document.getElementById('btn-'+id);
+  if(ab){ab.classList.add('bg-indigo-50','text-indigo-700');ab.classList.remove('text-slate-600');}
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+openTab(0);
+
+/* ============ CRONOGRAMA ============ */
+const CRONO=[
+ [1,"Verbo BE y números 1–100","La base de todo. Sin esto no se puede armar ninguna oración.",1],
+ [2,"Países, nacionalidades y deletreo","De dónde eres y cómo deletrear tu nombre y tu correo.",2],
+ [3,"Plurales y demostrativos","Nombrar objetos: uno o varios, cerca o lejos.",3],
+ [4,"Preguntas de información personal","La entrevista del examen oral, pregunta por pregunta.",4],
+ [5,"Simulacro completo","Prueba escrita de práctica + guion del examen oral.",5]
+];
+document.getElementById('cronograma').innerHTML=CRONO.map(c=>
+ `<div class="flex items-center justify-between gap-3 p-3 bg-slate-50 border border-slate-200 rounded-lg text-xs">
+    <div class="flex items-center gap-3">
+      <span class="w-8 h-8 shrink-0 rounded-full bg-indigo-600 text-white font-bold flex items-center justify-center">${c[0]}</span>
+      <div><p class="font-bold text-slate-800">${c[1]}</p><p class="text-slate-500">${c[2]}</p></div>
+    </div>
+    <button onclick="openTab(${c[3]})" class="text-indigo-600 hover:underline font-semibold shrink-0">Abrir →</button>
+  </div>`).join('');
+
+/* ============ CHECKLIST (localStorage) ============ */
+const CHECK=["Verbo BE: am / is / are","Negación con not","Preguntas con BE (Are you…?)","Números 1–100 escritos","Diferencia -teen / -ty","Alfabeto y deletreo","Países y nacionalidades","Plurales regulares e irregulares","this / that / these / those","5 preguntas personales de memoria"];
+function loadCheck(){try{return JSON.parse(localStorage.getItem('inu1101check')||'[]')}catch(e){return[]}}
+function saveCheck(a){try{localStorage.setItem('inu1101check',JSON.stringify(a))}catch(e){}}
+function renderCheck(){
+  const st=loadCheck();
+  document.getElementById('checklist').innerHTML=CHECK.map((c,i)=>
+   `<label class="flex items-start gap-2 cursor-pointer"><input type="checkbox" data-i="${i}" ${st.includes(i)?'checked':''} class="mt-0.5 rounded"><span>${c}</span></label>`).join('');
+  document.querySelectorAll('#checklist input').forEach(inp=>{
+    inp.onchange=()=>{let s=loadCheck();const i=+inp.dataset.i;
+      s=inp.checked?[...new Set([...s,i])]:s.filter(x=>x!==i);saveCheck(s);};
+  });
+}
+function resetCheck(){saveCheck([]);renderCheck();}
+renderCheck();
+
+/* ============ NÚMEROS ============ */
+const NUMS=[
+ ["1","one","uán"],["2","two","tú"],["3","three","zríi"],["4","four","for"],["5","five","fáiv"],
+ ["6","six","six"],["7","seven","séven"],["8","eight","éit"],["9","nine","náin"],["10","ten","ten"],
+ ["11","eleven","iléven"],["12","twelve","tuélv"],["13","thirteen","zer-TÍIN"],["14","fourteen","for-TÍIN"],["15","fifteen","fif-TÍIN"],
+ ["16","sixteen","six-TÍIN"],["17","seventeen","seven-TÍIN"],["18","eighteen","ei-TÍIN"],["19","nineteen","nain-TÍIN"],["20","twenty","TUÉN-ti"],
+ ["30","thirty","ZÉR-ti"],["40","forty","FÓR-ti"],["50","fifty","FÍF-ti"],["60","sixty","SÍX-ti"],["70","seventy","SÉVEN-ti"],
+ ["80","eighty","ÉI-ti"],["90","ninety","NÁIN-ti"],["100","one hundred","uán jándred"]
+];
+let nrows='';
+for(let i=0;i<NUMS.length;i+=2){
+  const a=NUMS[i],b=NUMS[i+1];
+  nrows+=`<tr><td class="p-2 font-bold text-indigo-700">${a[0]}</td><td class="p-2 font-medium">${a[1]}</td><td class="p-2 say">${a[2]}</td>`+
+   (b?`<td class="p-2 font-bold text-indigo-700">${b[0]}</td><td class="p-2 font-medium">${b[1]}</td><td class="p-2 say">${b[2]}</td>`:'<td colspan="3"></td>')+'</tr>';
+}
+document.getElementById('numtable').innerHTML=nrows;
+
+/* ============ NACIONALIDADES ============ */
+const NAT=[
+ ["Chile","Chilean","chílian","I am from Chile. I am Chilean."],
+ ["Argentina","Argentinian","arllentínian","She is from Argentina. She is Argentinian."],
+ ["Peru","Peruvian","perúvian","He is from Peru. He is Peruvian."],
+ ["Brazil","Brazilian","brasílian","They are from Brazil. They are Brazilian."],
+ ["Spain","Spanish","spánish","We are from Spain. We are Spanish."],
+ ["The USA","American","amérikan","She is from the USA. She is American."],
+ ["The UK","British","brítish","You are from the UK. You are British."],
+ ["China","Chinese","chainís","He is from China. He is Chinese."],
+ ["Colombia","Colombian","colómbian","Shakira is from Colombia. She is Colombian."],
+ ["France","French","french","They are from France. They are French."]
+];
+document.getElementById('natable').innerHTML=NAT.map(n=>
+ `<tr><td class="p-2 font-medium">${n[0]}</td><td class="p-2 font-bold text-indigo-700">${n[1]}</td><td class="p-2 say">${n[2]}</td><td class="p-2 font-mono text-[11px]">${n[3]}</td></tr>`).join('');
+
+/* ============ ALFABETO ============ */
+const ALPHA=[["A","éi"],["B","bi"],["C","si"],["D","di"],["E","i"],["F","ef"],["G","yi"],["H","éich"],["I","ái"],["J","yéi"],["K","kéi"],["L","el"],["M","em"],["N","en"],["O","óu"],["P","pi"],["Q","kiú"],["R","ar"],["S","es"],["T","ti"],["U","iú"],["V","vi"],["W","dábol-iu"],["X","ex"],["Y","uái"],["Z","zi / zed"]];
+const tricky=["A","E","G","I","J","W","Y"];
+document.getElementById('alphabet').innerHTML=ALPHA.map(a=>
+ `<div class="p-2 border rounded ${tricky.includes(a[0])?'bg-amber-50 border-amber-300':'bg-slate-50'}">
+    <span class="font-bold text-indigo-700 text-sm">${a[0]}</span><br><span class="say">${a[1]}</span></div>`).join('');
+
+/* ============ PREGUNTAS PERSONALES ============ */
+const QA=[
+ ["What's your name?","¿Cómo te llamas?","My name is Camila.","También: <strong>I'm Camila.</strong>"],
+ ["What's your first name?","¿Cuál es tu nombre?","My first name is Camila.","<em>first name</em> = nombre"],
+ ["What's your last name / surname?","¿Cuál es tu apellido?","My last name is Torres.","<em>last name</em> = apellido"],
+ ["How do you spell it?","¿Cómo se deletrea?","It's T – O – R – R – E – S.","Letra por letra, pausado"],
+ ["How old are you?","¿Cuántos años tienes?","I'm twenty-one years old.","❌ Nunca <em>I have 21</em>"],
+ ["Where are you from?","¿De dónde eres?","I'm from Chile. I'm Chilean.","País con <em>from</em>; nacionalidad sin <em>from</em>"],
+ ["What's your phone number?","¿Cuál es tu teléfono?","It's nine – eight – seven – six…","Número por número. 0 = <em>zero</em> u <em>oh</em>"],
+ ["What's your email address?","¿Cuál es tu correo?","It's c dot torres at gmail dot com.","@ = <em>at</em> · . = <em>dot</em>"],
+ ["Are you a student?","¿Eres estudiante?","Yes, I am. / No, I'm not.","Respuesta corta con el mismo verbo"],
+ ["How are you?","¿Cómo estás?","I'm fine, thank you. And you?","Saludo de cortesía"]
+];
+document.getElementById('qatable').innerHTML=QA.map(q=>
+ `<tr><td class="p-2 font-bold">${q[0]}</td><td class="p-2 es">${q[1]}</td><td class="p-2 font-mono text-[11px]">${q[2]}</td><td class="p-2 text-[11px]">${q[3]}</td></tr>`).join('');
+
+/* ============ EJERCICIOS INTERNOS ============ */
+function drill(containerId,items){
+  document.getElementById(containerId).innerHTML=items.map((it,i)=>
+   `<details class="border border-slate-200 rounded-lg bg-slate-50 p-3">
+      <summary class="font-mono text-slate-800 flex justify-between items-center gap-3">
+        <span>${i+1}. ${it[0]}</span>
+        <span class="text-indigo-600 text-[11px] font-sans font-semibold shrink-0">Ver respuesta ▾</span>
+      </summary>
+      <div class="mt-2 pt-2 border-t border-slate-200">
+        <p class="font-bold text-emerald-700 font-mono">${it[1]}</p>
+        <p class="text-slate-600 mt-1">${it[2]}</p>
+      </div>
+    </details>`).join('');
+}
+drill('ex1',[
+ ["She ____ a student.","She <u>is</u> a student.","<em>She</em> es una sola persona → <strong>is</strong>. Significa: Ella es estudiante."],
+ ["They ____ not in the classroom.","They <u>are</u> not in the classroom.","<em>They</em> son varios → <strong>are</strong>, y el <em>not</em> va después. Ellos no están en la sala."],
+ ["____ you twenty years old?","<u>Are</u> you twenty years old?","Pregunta: el verbo va primero. ¿Tienes veinte años?"],
+ ["I ____ from Santiago.","I <u>am</u> from Santiago.","<em>I</em> siempre va con <strong>am</strong>. Soy de Santiago."],
+ ["Escribe con letras: 45","forty-five","Decena + guion + unidad. Ojo: <em>forty</em> sin &quot;u&quot;."],
+ ["Escribe con letras: 13 y 30","thirteen / thirty","13 lleva fuerza al final (zer-TÍIN); 30 al principio (ZÉR-ti)."],
+ ["Traduce: Ella no es profesora.","She is not a teacher. (She isn't a teacher.)","Sujeto + is + not + resto."]
+]);
+drill('ex2',[
+ ["Where are you from? (responde con tu país)","I am from Chile. I am Chilean.","Primero el país con <em>from</em>, después la nacionalidad sin <em>from</em>."],
+ ["He is from Brazil. He is ____.","Brazilian","Brazil → Brazilian. Siempre con mayúscula."],
+ ["Corrige: I am Chile.","I am from Chile. / I am Chilean.","<em>I am Chile</em> significaría &quot;yo soy el país Chile&quot;."],
+ ["Deletrea en inglés tu apellido","Ejemplo: SILVA → &quot;es – ái – el – vi – éi&quot;","Practica en voz alta, una letra por segundo."],
+ ["¿Cómo se dice @ y . en un correo?","at / dot","ana@gmail.com → &quot;ana at gmail dot com&quot;."],
+ ["¿Cómo suena la letra E? ¿Y la I?","E = &quot;i&quot; · I = &quot;ái&quot;","Es el par que más se confunde en el examen oral."]
+]);
+drill('ex3',[
+ ["Plural de: watch","watches","Termina en -ch → se agrega <strong>-es</strong>."],
+ ["Plural de: city","cities","Consonante + y → <strong>-ies</strong>."],
+ ["Plural de: man / woman / child / person","men / women / children / people","Irregulares: hay que memorizarlos."],
+ ["____ are my keys. (están lejos)","Those","Lejos + plural → <strong>those</strong>."],
+ ["____ is my notebook. (está aquí)","This","Cerca + singular → <strong>this</strong>."],
+ ["Corrige: This are my books.","These are my books.","<em>books</em> es plural → <strong>these</strong> + <strong>are</strong>."],
+ ["Responde: What are those? (sillas, lejos)","They are chairs.","Para varios se responde con <strong>They are</strong>."]
+]);
+
+/* ============ FICHA PERSONAL ============ */
+const FICHA=[
+ ["nombre","My first name is ______.","Tu nombre"],
+ ["apellido","My last name is ______.","Tu apellido"],
+ ["spelling","It's _ – _ – _ – _ …","Tu apellido deletreado"],
+ ["edad","I am ______ years old.","Tu edad con letras (ej. twenty-two)"],
+ ["origen","I am from ______. I am ______.","País y nacionalidad"],
+ ["email","It's ______ at ______ dot ______.","Tu correo dicho en inglés"]
+];
+function loadFicha(){try{return JSON.parse(localStorage.getItem('inu1101ficha')||'{}')}catch(e){return{}}}
+const fv=loadFicha();
+document.getElementById('ficha').innerHTML=FICHA.map(f=>
+ `<div class="border border-slate-200 rounded-lg p-3 bg-slate-50">
+    <p class="font-mono text-slate-700 mb-1">${f[1]}</p>
+    <input data-k="${f[0]}" value="${(fv[f[0]]||'').replace(/"/g,'&quot;')}" placeholder="${f[2]}" class="w-full text-xs border border-slate-300 rounded px-2 py-1.5">
+  </div>`).join('');
+document.querySelectorAll('#ficha input').forEach(inp=>{
+  inp.oninput=()=>{const d=loadFicha();d[inp.dataset.k]=inp.value;
+    try{localStorage.setItem('inu1101ficha',JSON.stringify(d))}catch(e){}};
+});
+
+/* ============ QUIZ ============ */
+const QUIZ=[
+ {q:"Elige la oración correcta:",o:["She have 20 years old and is Chilean.","She is 20 years old and she is Chilean.","She is 20 years old and she is Chile."],a:1,
+  e:"La edad se dice con el verbo BE (<strong>is</strong>), no con <em>have</em>. Y la nacionalidad es <em>Chilean</em>, no <em>Chile</em>."},
+ {q:"¿Cómo se escribe el número 45?",o:["Fourty-five","Forty five","Forty-five"],a:2,
+  e:"<strong>Forty</strong> se escribe sin &quot;u&quot;, y del 21 al 99 siempre lleva guion."},
+ {q:"El plural de &quot;watch&quot; y &quot;man&quot; es:",o:["watchs / mans","watches / men","watchies / mens"],a:1,
+  e:"<em>watch</em> termina en -ch → <strong>watches</strong>. <em>man</em> es irregular → <strong>men</strong>."},
+ {q:"¡Mira esas llaves allá! Completa: &quot;____ are my keys.&quot;",o:["This","These","Those"],a:2,
+  e:"Están <strong>lejos</strong> y son <strong>varias</strong> → <strong>those</strong>."},
+ {q:"Completa: &quot;I ____ a student.&quot;",o:["is","am","are"],a:1,
+  e:"El pronombre <strong>I</strong> siempre va con <strong>am</strong>."},
+ {q:"¿Cuál es la pregunta correcta?",o:["You are from Chile?","Are you from Chile?","From Chile you are?"],a:1,
+  e:"En la pregunta el verbo BE va <strong>antes</strong> del pronombre: <em>Are you…?</em>"},
+ {q:"Completa la negación: &quot;He ____ from Peru.&quot; (él NO es de Perú)",o:["is not","not is","am not"],a:0,
+  e:"El <strong>not</strong> va siempre <strong>después</strong> de am/is/are. Forma corta: <em>isn't</em>."},
+ {q:"&quot;What's your email address?&quot; — ¿cómo dices ana@gmail.com?",o:["ana arroba gmail punto com","ana at gmail dot com","ana a gmail point com"],a:1,
+  e:"@ = <strong>at</strong> · . = <strong>dot</strong>."},
+ {q:"Completa: &quot;____ is my pencil.&quot; (lo tienes en la mano)",o:["This","These","Those"],a:0,
+  e:"Está <strong>cerca</strong> y es <strong>uno</strong> → <strong>this</strong> + <strong>is</strong>."},
+ {q:"¿Cuál es la nacionalidad de &quot;The USA&quot;?",o:["Usanian","American","USAn"],a:1,
+  e:"The USA → <strong>American</strong>. Siempre con mayúscula."},
+ {q:"&quot;How old are you?&quot; significa:",o:["¿Cómo estás?","¿De dónde eres?","¿Cuántos años tienes?"],a:2,
+  e:"<em>How old</em> = qué edad. Se responde: <strong>I am ___ years old.</strong>"},
+ {q:"Responde correctamente: &quot;What are these?&quot; (son libros, cerca)",o:["It is books.","They are books.","This are books."],a:1,
+  e:"Para <strong>varios</strong> la respuesta es <strong>They are</strong> + plural."}
+];
+document.getElementById('quiz').innerHTML=QUIZ.map((x,i)=>
+ `<div class="bg-slate-50 border border-slate-200 p-3 rounded" id="qw-${i}">
+    <p class="font-bold text-slate-800 mb-2">${i+1}. ${x.q}</p>
+    ${x.o.map((o,j)=>`<label class="block py-0.5 cursor-pointer"><input type="radio" name="q${i}" value="${j}" class="mr-1.5">${o}</label>`).join('')}
+    <div class="hidden mt-2 pt-2 border-t border-slate-200 text-[11px]" id="fb-${i}"></div>
+  </div>`).join('');
+function checkQuiz(){
+  let score=0;
+  QUIZ.forEach((x,i)=>{
+    const sel=document.querySelector('input[name="q'+i+'"]:checked');
+    const fb=document.getElementById('fb-'+i), wrap=document.getElementById('qw-'+i);
+    fb.classList.remove('hidden');
+    wrap.className="p-3 rounded border "+((sel&&+sel.value===x.a)?"bg-emerald-50 border-emerald-300":"bg-rose-50 border-rose-300");
+    if(sel&&+sel.value===x.a){score++;fb.innerHTML='<span class="font-bold text-emerald-700">✅ Correcto.</span> '+x.e;}
+    else fb.innerHTML='<span class="font-bold text-rose-700">❌ Correcta: '+x.o[x.a]+'.</span> '+x.e;
+  });
+  const r=document.getElementById('quiz-result');
+  r.classList.remove('hidden');
+  const pct=Math.round(score/QUIZ.length*100);
+  let msg = score===QUIZ.length ? "Perfecto. Está lista para el Written Test."
+          : score>=9 ? "Buen nivel. Repasa solo los temas marcados en rojo."
+          : score>=6 ? "Vas encaminada. Vuelve a los módulos de las preguntas falladas y repite el simulacro mañana."
+          : "Hay que volver al Módulo 1 y 2 antes de repetir esto. Es normal al principio: la base es el verbo BE.";
+  r.className="mt-3 p-3 rounded border text-sm font-bold "+(score>=9?"bg-emerald-100 text-emerald-800 border-emerald-300":"bg-amber-100 text-amber-900 border-amber-300");
+  r.innerHTML=`Puntaje: ${score}/${QUIZ.length} (${pct}%). ${msg}`;
+}
+function resetQuiz(){
+  document.querySelectorAll('#quiz input').forEach(i=>i.checked=false);
+  QUIZ.forEach((x,i)=>{document.getElementById('fb-'+i).classList.add('hidden');
+    document.getElementById('qw-'+i).className="bg-slate-50 border border-slate-200 p-3 rounded";});
+  document.getElementById('quiz-result').classList.add('hidden');
+}
+
+/* ============ ORAL STEPS ============ */
+const ORAL=[
+ ["Paso 1 · Saludo y datos personales","El profesor pregunta: <em>What's your name? How old are you? What's your email address?</em>","Respuestas preparadas con el verbo BE. Nunca <em>I have…</em> para la edad."],
+ ["Paso 2 · Spelling","<em>Please spell your surname</em> / <em>Spell the word DICTIONARY</em>.","Letra por letra, lento y claro. Ojo con E, I, A, G, J."],
+ ["Paso 3 · Origen","<em>Where are you from?</em>","I'm from Chile. I'm Chilean. (las dos frases)"],
+ ["Paso 4 · Objetos y demostrativos","El profesor señala objetos: <em>What is this? What are those?</em>","It is a… / They are… + this/that/these/those según cerca-lejos y uno-varios."],
+ ["Paso 5 · Números","Te pide decir tu teléfono o una cantidad.","Número por número. Cuida -teen vs -ty."]
+];
+document.getElementById('oralsteps').innerHTML=ORAL.map(o=>
+ `<div class="bg-amber-50/60 border border-amber-200 p-3 rounded">
+    <p class="font-bold text-indigo-900">${o[0]}</p>
+    <p class="text-slate-700 mt-1">${o[1]}</p>
+    <p class="text-emerald-800 mt-1"><strong>Qué hacer:</strong> ${o[2]}</p>
+  </div>`).join('');
+
+/* ============ ENLACES ============ */
+const LINKS={
+ 1:{ej:[
+   ["curso-ingles.com · Verbo TO BE (ejercicios con corrección)","https://www.curso-ingles.com/practicar/ejercicios/to-be"],
+   ["ejerciciosinglesonline.com · TO BE afirmativo","https://www.ejerciciosinglesonline.com/exercises-and-theory/exercises-and-theory-2/ex1-to-be/"],
+   ["ejerciciosinglesonline.com · Números en inglés","https://www.ejerciciosinglesonline.com/exercises-and-theory/grammar-exercises-and-theory/numbers/"],
+   ["saberingles.com.ar · Nivel básico: to be","https://www.saberingles.com.ar/exercises/index1.html"]
+ ],yt:[
+   ["El verbo TO BE explicado en español (con pronunciación)","https://www.youtube.com/watch?v=BEeu79SUC6M"],
+   ["Verbo TO BE: explicación fácil de SER y ESTAR","https://www.youtube.com/watch?v=NAVz0yfBZGo"],
+   ["Pronunciar los números 13–19 vs 30–90","https://www.youtube.com/watch?v=HuWsq4JSVZk"],
+   ["¿13 o 30? Cómo pronunciar bien los números","https://www.youtube.com/watch?v=kItSo795rH0"]
+ ],s:"verbo+to+be+en+ingles+explicado+en+espa%C3%B1ol"},
+ 2:{ej:[
+   ["ejerciciosinglesonline.com · Países y nacionalidades","https://www.ejerciciosinglesonline.com/ejercicio1paisesynacionalidades/"],
+   ["ejerciciosinglesonline.com · El alfabeto (deletreo y dictados)","https://www.ejerciciosinglesonline.com/alfabeto/"],
+   ["aprenderinglesrapidoyfacil.com · Alfabeto con audio","https://www.aprenderinglesrapidoyfacil.com/2013/04/14/el-abecedario-o-alfabeto-en-ingles-con-pronunciacion-y-ejercicio-de-audio/"],
+   ["aprenderinglesrapidoyfacil.com · Listening de deletreo","https://www.aprenderinglesrapidoyfacil.com/2013/07/08/ejercicio-listening-sobre-el-alfabeto-en-ingles-basico/"]
+ ],yt:[
+   ["El abecedario en inglés con pronunciación (básico)","https://www.youtube.com/watch?v=gm2xQs7vgAQ"],
+   ["El abecedario + cómo deletrear palabras","https://www.youtube.com/watch?v=DUKjLPNRH_4"],
+   ["Deletrear en inglés: clase inicial","https://www.youtube.com/watch?v=dHPv9UD0Yy0"],
+   ["Países y nacionalidades: pronunciación","https://www.youtube.com/watch?v=ipHnTWK3s7Y"],
+   ["Países y nacionalidades (escritura y pronunciación)","https://www.youtube.com/watch?v=8vXZpOf8QBY"]
+ ],s:"alfabeto+en+ingles+pronunciacion+deletrear+espa%C3%B1ol"},
+ 3:{ej:[
+   ["inglessencillo.com · Juego de plurales","https://www.inglessencillo.com/ejercicio-plurales"],
+   ["gramatica-inglesa.com · this/that/these/those + ejercicios","https://www.gramatica-inglesa.com/es/temas/adjetivos/this-that-these-those"],
+   ["abaenglish.com · Demostrativos explicados en español","https://www.abaenglish.com/es/gramatica-ingles/adjetivos-pronombres-demostrativos/"],
+   ["curso-ingles.com · Todos los ejercicios por tema","https://www.curso-ingles.com/practicar/ejercicios"]
+ ],yt:[
+   ["Uso de THIS THAT THESE THOSE + pronunciación","https://www.youtube.com/watch?v=gYzXraTR2O4"],
+   ["Pronunciación del sonido TH (three / thirteen)","https://www.youtube.com/watch?v=UvnVXHqkJfw"]
+ ],s:"this+that+these+those+en+espa%C3%B1ol+explicado"},
+ 4:{ej:[
+   ["curso-ingles.com · Ejercicios de to be y preguntas","https://www.curso-ingles.com/practicar/ejercicios/to-be"],
+   ["ejerciciosinglesonline.com · Sección principiantes","https://www.ejerciciosinglesonline.com/beginners/"],
+   ["saberingles.com.ar · Ejercicios básicos","https://www.saberingles.com.ar/exercises/index1.html"]
+ ],yt:[
+   ["Preguntas y respuestas de información personal (to be)","https://www.youtube.com/watch?v=BEeu79SUC6M"],
+   ["Deletrear nombre, apellido y correo","https://www.youtube.com/watch?v=dHPv9UD0Yy0"]
+ ],s:"preguntas+de+informacion+personal+en+ingles+basico+espa%C3%B1ol"},
+ 5:{ej:[
+   ["curso-ingles.com · +300 ejercicios con corrección","https://www.curso-ingles.com/practicar/ejercicios"],
+   ["saberingles.com.ar · Ejercicios nivel básico","https://www.saberingles.com.ar/exercises/index1.html"],
+   ["ejerciciosinglesonline.com · Principiantes","https://www.ejerciciosinglesonline.com/beginners/"]
+ ],yt:[
+   ["Repaso del verbo TO BE antes del examen","https://www.youtube.com/watch?v=NAVz0yfBZGo"]
+ ],s:"ingles+basico+A1+repaso+examen+espa%C3%B1ol"},
+ 6:{ej:[
+   ["ejerciciosinglesonline.com · Alfabeto y pronunciación","https://www.ejerciciosinglesonline.com/alfabeto/"]
+ ],yt:[
+   ["Pronunciación de three / thirteen / thirty","https://www.youtube.com/watch?v=UvnVXHqkJfw"],
+   ["El abecedario en inglés con pronunciación","https://www.youtube.com/watch?v=gm2xQs7vgAQ"],
+   ["Pronunciación de THIS / THESE (sonido TH)","https://www.youtube.com/watch?v=gYzXraTR2O4"]
+ ],s:"pronunciacion+ingles+para+hispanohablantes+sonido+TH"}
+};
+function btn(t,h,cls){return `<a href="${h}" target="_blank" rel="noopener" class="${cls}">${t} ↗</a>`;}
+Object.keys(LINKS).forEach(k=>{
+  const d=LINKS[k], host=document.getElementById('links-'+k);
+  if(!host)return;
+  host.className="space-y-4";
+  host.innerHTML=
+  `<div class="bg-white rounded-xl shadow-sm border border-slate-200 p-5">
+     <h3 class="font-bold text-slate-900 text-sm mb-1">🌐 Ejercicios online (páginas en español)</h3>
+     <p class="text-[11px] text-slate-500 mb-3">Las instrucciones están en español y se corrigen solas.</p>
+     <div class="flex flex-wrap gap-2 text-xs">${d.ej.map(l=>btn(l[0],l[1],"bg-indigo-50 hover:bg-indigo-100 text-indigo-700 px-3 py-1.5 rounded border border-indigo-200 font-medium")).join('')}</div>
+   </div>
+   <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-5">
+     <h3 class="font-bold text-slate-900 text-sm mb-1">▶️ Videos de YouTube (explicados en español)</h3>
+     <p class="text-[11px] text-slate-500 mb-3">Escucha y repite en voz alta. Un video por sesión es suficiente.</p>
+     <div class="flex flex-wrap gap-2 text-xs">${d.yt.map(l=>btn(l[0],l[1],"bg-red-50 hover:bg-red-100 text-red-700 px-3 py-1.5 rounded border border-red-200 font-medium")).join('')}</div>
+     <div class="mt-3 pt-3 border-t border-slate-100">
+       ${btn("Búsqueda de respaldo en YouTube (si un video ya no existe)","https://www.youtube.com/results?search_query="+d.s,"text-[11px] text-slate-500 underline")}
+     </div>
+   </div>`;
+});
+</script>
+</body>
+</html>
